@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diagramma di Gantt Professionale - 171 Giorni</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f6f9; margin: 40px; color: #333; }
         h1 { text-align: center; color: #343a40; font-size: 24px; margin-bottom: 20px; }
@@ -99,11 +100,35 @@
             border-radius: 4px;
         }
 
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            transform: translateY(-5px);
+        }
+
+        .button i {
+            margin-right: 10px;
+        }
+
     </style>
 </head>
 <body>
-    <h1>Diagramma di Gantt Professionale - 171 Giorni</h1>
 
+    <h1>Diagramma di Gantt Professionale - 171 Giorni</h1>
     <!-- Legenda -->
     <div class="legend">
         <div>
@@ -124,7 +149,10 @@
     <div class="gantt-chart-container">
         <div class="gantt-chart"></div>
     </div>
-
+    <br>
+    <a href="index.html" class="button">
+        <i class="fas fa-home"></i> Home
+    </a>    
     <script>
         // Dati del progetto con date di inizio per le attività
         const totalDays = 171; // Giorni totali

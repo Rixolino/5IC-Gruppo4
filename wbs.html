@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Work Breakdown Structure - HelpDigit</title>
   <script src="https://unpkg.com/vis-network@9.0.4/dist/vis-network.min.js"></script>
+  <!-- Aggiungi il link per FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -37,11 +39,13 @@
       z-index: 1000;
     }
 
+    /* Pulsante in alto a sinistra con icona FA */
     #back-button {
-      display: block;
-      margin: 30px auto;
-      padding: 10px 20px;
-      font-size: 16px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px;
+      font-size: 24px;
       background-color: #0066cc;
       color: white;
       border: none;
@@ -49,10 +53,16 @@
       cursor: pointer;
       text-align: center;
       text-decoration: none;
+      z-index: 1000;
     }
 
     #back-button:hover {
       background-color: #004b8d;
+    }
+
+    /* Icona FontAwesome */
+    .fa-home {
+      font-size: 24px;
     }
   </style>
 </head>
@@ -62,8 +72,8 @@
   <div id="zoom-message">Usa la rotella del mouse per zoomare</div>
   <div id="wbs-container"></div>
 
-  <!-- Pulsante che porta a index.html -->
-  <a href="index.html" id="back-button">Torna alla Home</a>
+  <!-- Pulsante con icona FA per tornare alla Home -->
+  <a href="index.html" id="back-button"><i class="fa fa-home"></i> Home</a>
 
   <script>
     const data = {
