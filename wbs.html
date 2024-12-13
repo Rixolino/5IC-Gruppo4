@@ -22,7 +22,7 @@
 
     #wbs-container {
       width: 100vw;
-      height: 100vh;
+      height: 80vh;
     }
 
     #zoom-message {
@@ -36,6 +36,24 @@
       font-size: 16px;
       z-index: 1000;
     }
+
+    #back-button {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    #back-button:hover {
+      background-color: #004b8d;
+    }
   </style>
 </head>
 <body>
@@ -43,6 +61,9 @@
   <h1>Work Breakdown Structure (WBS) per "HelpDigit"</h1>
   <div id="zoom-message">Usa la rotella del mouse per zoomare</div>
   <div id="wbs-container"></div>
+
+  <!-- Pulsante che porta a index.html -->
+  <a href="index.html" id="back-button">Torna alla Home</a>
 
   <script>
     const data = {
