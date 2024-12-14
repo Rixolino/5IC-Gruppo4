@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Work Breakdown Structure - HelpDigit</title>
   <script src="https://unpkg.com/vis-network@9.0.4/dist/vis-network.min.js"></script>
+  <!-- Aggiungi il link per FontAwesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     body {
@@ -38,6 +39,7 @@
       z-index: 1000;
     }
 
+    /* Pulsante in alto a sinistra con icona FA */
     #back-button {
       position: fixed;
       top: 20px;
@@ -58,28 +60,9 @@
       background-color: #004b8d;
     }
 
+    /* Icona FontAwesome */
     .fa-home {
       font-size: 24px;
-    }
-
-    /* Media Query per dispositivi mobili */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 18px;
-        margin: 10px 0;
-      }
-
-      #zoom-message {
-        font-size: 14px;
-        top: 10px;
-        right: 10px;
-        padding: 8px;
-      }
-
-      #back-button {
-        font-size: 18px;
-        padding: 8px;
-      }
     }
   </style>
 </head>
@@ -89,6 +72,7 @@
   <div id="zoom-message">Usa la rotella del mouse per zoomare</div>
   <div id="wbs-container"></div>
 
+  <!-- Pulsante con icona FA per tornare alla Home -->
   <a href="index.html" id="back-button"><i class="fa fa-home"></i> Home</a>
 
   <script>
@@ -100,18 +84,23 @@
         { id: 4, label: 'Promozione e marketing' },
         { id: 5, label: 'Gestione dei clienti' },
         { id: 6, label: 'Monitoraggio e valutazione' },
+        
         { id: 7, label: 'Definire i servizi offerti' },
         { id: 8, label: 'Stabilire i prezzi' },
         { id: 9, label: 'Identificare target clienti' },
         { id: 10, label: 'Creare logo e nome' },
+
         { id: 11, label: 'Realizzare il sito web' },
         { id: 12, label: 'Creare contenuti per promozione' },
+
         { id: 13, label: 'Creare volantino promozionale' },
         { id: 14, label: 'Promuovere su piattaforme social' },
+
         { id: 15, label: 'Configurare sistema ordini' },
         { id: 16, label: 'Rispondere a richieste' },
         { id: 17, label: 'Realizzare servizi richiesti' },
         { id: 18, label: 'Gestire pagamenti' },
+
         { id: 19, label: 'Registrare guadagni' },
         { id: 20, label: 'Raccogliere feedback' },
         { id: 21, label: 'Aggiornare sito/social' }
@@ -122,18 +111,23 @@
         { from: 1, to: 4 },
         { from: 1, to: 5 },
         { from: 1, to: 6 },
+
         { from: 2, to: 7 },
         { from: 2, to: 8 },
         { from: 2, to: 9 },
         { from: 2, to: 10 },
+
         { from: 3, to: 11 },
         { from: 3, to: 12 },
+
         { from: 4, to: 13 },
         { from: 4, to: 14 },
+
         { from: 5, to: 15 },
         { from: 5, to: 16 },
         { from: 5, to: 17 },
         { from: 5, to: 18 },
+
         { from: 6, to: 19 },
         { from: 6, to: 20 },
         { from: 6, to: 21 }
@@ -144,25 +138,55 @@
       nodes: {
         shape: 'box',
         color: { background: '#0066cc', border: '#004b8d' },
-        font: { color: 'white', size: 14 },
-        shapeProperties: { borderRadius: 10 }
+        font: {
+          color: 'white',
+          size: 14,
+          multi: true,
+          bold: true
+        },
+        margin: 10,
+        widthConstraint: {
+          maximum: 200
+        },
+        shapeProperties: {
+          borderRadius: 10,
+        }
       },
-      edges: { color: { color: '#ccc' }, width: 2 },
-      layout: { hierarchical: { direction: 'UD', levelSeparation: 250 } },
-      physics: { enabled: false },
-      interaction: { zoomView: true }
+      edges: {
+        color: { color: '#ccc' },
+        width: 2,
+        smooth: { type: 'continuous' },
+        arrows: { to: { enabled: true, scaleFactor: 1.5 } }
+      },
+      layout: {
+        hierarchical: {
+          direction: 'UD',  // Disposizione verticale per i nodi (Up to Down)
+          sortMethod: 'directed',
+          levelSeparation: 250, // Aumenta la separazione tra i livelli
+          nodeSpacing: 200, // Aumenta la distanza tra i nodi sullo stesso livello
+          treeSpacing: 300,  // Distanza extra tra rami per maggiore separazione tra i nodi figli
+        }
+      },
+      physics: {
+        enabled: false
+      },
+      interaction: {
+        dragNodes: false,
+        zoomView: true,
+        hover: true
+      }
     };
 
     const container = document.getElementById('wbs-container');
-    const network = new vis.Network(container, data, options);
+    const dataSet = {
+      nodes: data.nodes,
+      edges: data.edges
+    };
+    
+    const network = new vis.Network(container, dataSet, options);
 
-    // Rileva se l'utente è su mobile
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      document.getElementById('zoom-message').innerText = 'Allarga con le dita per zoomare';
-    }
-
-    window.addEventListener('resize', function () {
+    // Riprogetta il network al ridimensionamento della finestra
+    window.addEventListener('resize', function() {
       network.redraw();
     });
   </script>
