@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagramma di Gantt Professionale - 171 Giorni</title>
+    <title>Diagramma di Gantt Professionale - 102 Giorni</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f6f9; margin: 40px; color: #333; }
-        h1 { text-align: center; color: #343a40; font-size: 24px; margin-bottom: 20px; }
-        
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: #f4f6f9;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
         /* Container del diagramma di Gantt */
         .gantt-chart-container {
             overflow-x: auto;
@@ -23,7 +35,8 @@
         /* Stile del diagramma di Gantt */
         .gantt-chart {
             display: grid;
-            grid-template-columns: 250px repeat(171, 1fr); /* 171 giorni */
+            grid-template-columns: 250px repeat(102, 1fr);
+            /* 102 giorni */
             grid-template-rows: auto repeat(12, auto);
             border: 1px solid #e0e0e0;
             border-radius: 8px;
@@ -54,24 +67,42 @@
             font-weight: bold;
             text-align: left;
             padding-left: 10px;
-            width: 250px; /* Larghezza fissa per la colonna dei task */
+            width: 250px;
+            /* Larghezza fissa per la colonna dei task */
         }
 
         /* Colonna dei task pinnata */
         .task-name.pinned {
             position: sticky;
             left: 0;
-            background-color: #f1f3f5; /* Cambia il colore quando è pinnata */
+            background-color: #f1f3f5;
+            /* Cambia il colore quando è pinnata */
             z-index: 1;
             box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
         }
 
         /* Colori per le varie tipologie di attività */
-        .task { background-color: #28a745; color: white; border-radius: 4px; }
-        .task:hover { background-color: #218838; }
+        .task {
+            background-color: #28a745;
+            color: white;
+            border-radius: 4px;
+        }
 
-        .critical-path { background-color: #dc3545; color: white; border-radius: 4px; }
-        .milestone { background-color: #ffc107; color: black; border-radius: 4px; }
+        .task:hover {
+            background-color: #218838;
+        }
+
+        .critical-path {
+            background-color: #dc3545;
+            color: white;
+            border-radius: 4px;
+        }
+
+        .milestone {
+            background-color: #ffc107;
+            color: black;
+            border-radius: 4px;
+        }
 
         /* Legenda */
         .legend {
@@ -123,12 +154,12 @@
         .button i {
             margin-right: 10px;
         }
-
     </style>
 </head>
+
 <body>
 
-    <h1>Diagramma di Gantt Professionale - 171 Giorni</h1>
+    <h1>Diagramma di Gantt Professionale - 102 Giorni</h1>
     <!-- Legenda -->
     <div class="legend">
         <div>
@@ -152,46 +183,55 @@
     <br>
     <a href="index.html" class="button">
         <i class="fas fa-home"></i> Home
-    </a>    
+    </a>
     <script>
-        // Dati del progetto con date di inizio per le attività
-        const totalDays = 171; // Giorni totali
         const tasks = [
-            { name: "Analisi e Ricerca di Mercato", duration: 15, startDay: 1, type: "task" },
-            { name: "Definizione Strategia di Marketing", duration: 20, startDay: 16, type: "task" },
-            { name: "Creazione Sito Web", duration: 30, startDay: 36, type: "critical-path" },
-            { name: "Design e Grafica", duration: 15, startDay: 66, type: "task" },
-            { name: "Sviluppo Tecnico Sito", duration: 30, startDay: 81, type: "critical-path" },
-            { name: "Test e Ottimizzazione", duration: 15, startDay: 111, type: "task" },
-            { name: "Promozione Locale", duration: 25, startDay: 126, type: "task" },
-            { name: "Creazione Volantini", duration: 10, startDay: 126, type: "task" },
-            { name: "Configurazione Social Media", duration: 15, startDay: 136, type: "task" },
-            { name: "Campagna Pubblicitaria", duration: 20, startDay: 141, type: "critical-path" },
-            { name: "Prima Milestone: Lancio", duration: 1, startDay: 141, type: "milestone" },
-            { name: "Seconda Milestone: Primo Mese di Attività", duration: 1, startDay: 171, type: "milestone" }
+            { name: "Analisi e Ricerca di Mercato", duration: 8, startDay: 1, type: "task" },
+            { name: "Definizione Strategia di Marketing", duration: 10, startDay: 9, type: "task" },
+            { name: "Creazione Sito Web", duration: 15, startDay: 19, type: "critical-path" },
+            { name: "Design e Grafica", duration: 8, startDay: 34, type: "task" },
+            { name: "Sviluppo Tecnico Sito", duration: 15, startDay: 42, type: "critical-path" },
+            { name: "Test e Ottimizzazione", duration: 8, startDay: 57, type: "task" },
+            { name: "Promozione Locale", duration: 12, startDay: 65, type: "task" },
+            { name: "Creazione Volantini", duration: 5, startDay: 77, type: "task" },
+            { name: "Configurazione Social Media", duration: 8, startDay: 82, type: "task" },
+            { name: "Campagna Pubblicitaria", duration: 10, startDay: 90, type: "critical-path" },
+            { name: "Prima Milestone: Lancio", duration: 1, startDay: 100, type: "milestone" },
+            { name: "Seconda Milestone: Primo Mese di Attività", duration: 1, startDay: 101, type: "milestone" }
         ];
 
+        const totalDays = 102; // Giorni totali
+
+        // Selezioniamo il contenitore per il diagramma
         const chartContainer = document.querySelector('.gantt-chart');
-        chartContainer.innerHTML = '<div class="header">Task</div>' + 
+
+        // Aggiungiamo l'intestazione del diagramma (giorni e nome attività)
+        chartContainer.innerHTML = '<div class="header">Task</div>' +
             Array.from({ length: totalDays }, (_, i) => `<div class="header">${i + 1}</div>`).join('');
 
+        // Aggiungiamo le attività al diagramma
         tasks.forEach(task => {
+            // Creiamo la colonna con il nome dell'attività
             const nameDiv = `<div class="task-name">${task.name}</div>`;
+
+            // Creiamo le celle per la durata dell'attività
             const taskCells = Array.from({ length: totalDays }, (_, i) =>
                 i >= task.startDay - 1 && i < task.startDay - 1 + task.duration
-                    ? `<div class="${task.type}"></div>`
+                    ? `<div class="${task.type}"></div>` // Mostriamo il task
                     : task.type === "milestone" && i === task.startDay - 1
-                    ? `<div class="${task.type}"></div>`
-                    : `<div></div>`
+                        ? `<div class="${task.type}"></div>` // Mostriamo la milestone
+                        : `<div></div>` // Cellula vuota
             ).join('');
+
+            // Aggiungiamo il nome e le celle nel contenitore
             chartContainer.innerHTML += nameDiv + taskCells;
         });
 
-        // Funzione per "pinnare" la colonna Task
-        window.addEventListener('scroll', function() {
+        // Funzione per "pinnare" la colonna dei task quando si scorre la pagina
+        window.addEventListener('scroll', function () {
             const taskColumn = document.querySelectorAll('.task-name');
             const scrollPosition = window.scrollY;
-            
+
             taskColumn.forEach(task => {
                 if (scrollPosition > 50) {
                     task.classList.add('pinned');
@@ -200,6 +240,8 @@
                 }
             });
         });
+
     </script>
 </body>
+
 </html>
