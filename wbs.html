@@ -76,34 +76,43 @@
   <a href="index.html" id="back-button"><i class="fa fa-home"></i> Home</a>
 
   <script>
+    const colors = {
+      main: '#0066cc',
+      planning: '#ff9933',
+      platform: '#33cc33',
+      marketing: '#ff6699',
+      customers: '#9933ff',
+      monitoring: '#00cccc'
+    };
+  
     const data = {
       nodes: [
-        { id: 1, label: 'HelpDigit' },
-        { id: 2, label: 'Pianificazione del progetto' },
-        { id: 3, label: 'Creazione della piattaforma digitale' },
-        { id: 4, label: 'Promozione e marketing' },
-        { id: 5, label: 'Gestione dei clienti' },
-        { id: 6, label: 'Monitoraggio e valutazione' },
+        { id: 1, label: 'HelpDigit', color: colors.main },
+        { id: 2, label: 'Pianificazione del progetto', color: colors.planning },
+        { id: 3, label: 'Creazione della piattaforma digitale', color: colors.platform },
+        { id: 4, label: 'Promozione e marketing', color: colors.marketing },
+        { id: 5, label: 'Gestione dei clienti', color: colors.customers },
+        { id: 6, label: 'Monitoraggio e valutazione', color: colors.monitoring },
         
-        { id: 7, label: 'Definire i servizi offerti' },
-        { id: 8, label: 'Stabilire i prezzi' },
-        { id: 9, label: 'Identificare target clienti' },
-        { id: 10, label: 'Creare logo e nome' },
-
-        { id: 11, label: 'Realizzare il sito web' },
-        { id: 12, label: 'Creare contenuti per promozione' },
-
-        { id: 13, label: 'Creare volantino promozionale' },
-        { id: 14, label: 'Promuovere su piattaforme social' },
-
-        { id: 15, label: 'Configurare sistema ordini' },
-        { id: 16, label: 'Rispondere a richieste' },
-        { id: 17, label: 'Realizzare servizi richiesti' },
-        { id: 18, label: 'Gestire pagamenti' },
-
-        { id: 19, label: 'Registrare guadagni' },
-        { id: 20, label: 'Raccogliere feedback' },
-        { id: 21, label: 'Aggiornare sito/social' }
+        { id: 7, label: 'Definire i servizi offerti', color: colors.planning },
+        { id: 8, label: 'Stabilire i prezzi', color: colors.planning },
+        { id: 9, label: 'Identificare target clienti', color: colors.planning },
+        { id: 10, label: 'Creare logo e nome', color: colors.planning },
+  
+        { id: 11, label: 'Realizzare il sito web', color: colors.platform },
+        { id: 12, label: 'Creare contenuti per promozione', color: colors.platform },
+  
+        { id: 13, label: 'Creare volantino promozionale', color: colors.marketing },
+        { id: 14, label: 'Promuovere su piattaforme social', color: colors.marketing },
+  
+        { id: 15, label: 'Configurare sistema ordini', color: colors.customers },
+        { id: 16, label: 'Rispondere a richieste', color: colors.customers },
+        { id: 17, label: 'Realizzare servizi richiesti', color: colors.customers },
+        { id: 18, label: 'Gestire pagamenti', color: colors.customers },
+  
+        { id: 19, label: 'Registrare guadagni', color: colors.monitoring },
+        { id: 20, label: 'Raccogliere feedback', color: colors.monitoring },
+        { id: 21, label: 'Aggiornare sito/social', color: colors.monitoring }
       ],
       edges: [
         { from: 1, to: 2 },
@@ -111,46 +120,36 @@
         { from: 1, to: 4 },
         { from: 1, to: 5 },
         { from: 1, to: 6 },
-
+  
         { from: 2, to: 7 },
         { from: 2, to: 8 },
         { from: 2, to: 9 },
         { from: 2, to: 10 },
-
+  
         { from: 3, to: 11 },
         { from: 3, to: 12 },
-
+  
         { from: 4, to: 13 },
         { from: 4, to: 14 },
-
+  
         { from: 5, to: 15 },
         { from: 5, to: 16 },
         { from: 5, to: 17 },
         { from: 5, to: 18 },
-
+  
         { from: 6, to: 19 },
         { from: 6, to: 20 },
         { from: 6, to: 21 }
       ]
     };
-
+  
     const options = {
       nodes: {
         shape: 'box',
-        color: { background: '#0066cc', border: '#004b8d' },
-        font: {
-          color: 'white',
-          size: 14,
-          multi: true,
-          bold: true
-        },
+        font: { color: 'white', size: 14, multi: true, bold: true },
         margin: 10,
-        widthConstraint: {
-          maximum: 200
-        },
-        shapeProperties: {
-          borderRadius: 10,
-        }
+        widthConstraint: { maximum: 200 },
+        shapeProperties: { borderRadius: 10 }
       },
       edges: {
         color: { color: '#ccc' },
@@ -160,35 +159,35 @@
       },
       layout: {
         hierarchical: {
-          direction: 'UD',  // Disposizione verticale per i nodi (Up to Down)
+          direction: 'UD',
           sortMethod: 'directed',
-          levelSeparation: 250, // Aumenta la separazione tra i livelli
-          nodeSpacing: 200, // Aumenta la distanza tra i nodi sullo stesso livello
-          treeSpacing: 300,  // Distanza extra tra rami per maggiore separazione tra i nodi figli
+          levelSeparation: 250,
+          nodeSpacing: 200,
+          treeSpacing: 300
         }
       },
-      physics: {
-        enabled: false
-      },
-      interaction: {
-        dragNodes: false,
-        zoomView: true,
-        hover: true
-      }
+      physics: { enabled: false },
+      interaction: { dragNodes: false, zoomView: true, hover: true }
     };
-
+  
+    // Assegna i colori ai nodi in base all'attributo `color`
+    const coloredNodes = data.nodes.map(node => ({
+      ...node,
+      color: { background: node.color, border: '#333' }
+    }));
+  
     const container = document.getElementById('wbs-container');
     const dataSet = {
-      nodes: data.nodes,
+      nodes: coloredNodes,
       edges: data.edges
     };
-    
+  
     const network = new vis.Network(container, dataSet, options);
-
+  
     // Riprogetta il network al ridimensionamento della finestra
     window.addEventListener('resize', function() {
       network.redraw();
-    });
+    });  
   </script>
 </body>
 </html>
