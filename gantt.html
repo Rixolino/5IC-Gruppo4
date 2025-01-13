@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagramma di Gantt Professionale - 102 Giorni</title>
+    <title>Diagramma di Gantt Professionale - 95 Giorni</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         body {
@@ -35,8 +35,7 @@
         /* Stile del diagramma di Gantt */
         .gantt-chart {
             display: grid;
-            grid-template-columns: 250px repeat(102, 1fr);
-            /* 102 giorni */
+            grid-template-columns: 250px repeat(95, 1fr);
             grid-template-rows: auto repeat(12, auto);
             border: 1px solid #e0e0e0;
             border-radius: 8px;
@@ -68,20 +67,8 @@
             text-align: left;
             padding-left: 10px;
             width: 250px;
-            /* Larghezza fissa per la colonna dei task */
         }
 
-        /* Colonna dei task pinnata */
-        .task-name.pinned {
-            position: sticky;
-            left: 0;
-            background-color: #f1f3f5;
-            /* Cambia il colore quando è pinnata */
-            z-index: 1;
-            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Colori per le varie tipologie di attività */
         .task {
             background-color: #28a745;
             color: white;
@@ -101,33 +88,6 @@
         .milestone {
             background-color: #ffc107;
             color: black;
-            border-radius: 4px;
-        }
-
-        /* Legenda */
-        .legend {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .legend div {
-            margin: 0 20px;
-            text-align: center;
-        }
-
-        .legend div span {
-            display: block;
-            margin-top: 5px;
-            font-size: 14px;
-            color: #495057;
-        }
-
-        /* Piccole migliorie estetiche */
-        .legend div div {
-            width: 30px;
-            height: 20px;
-            margin: 0 auto;
             border-radius: 4px;
         }
 
@@ -159,22 +119,7 @@
 
 <body>
 
-    <h1>Diagramma di Gantt Professionale - 102 Giorni</h1>
-    <!-- Legenda -->
-    <div class="legend">
-        <div>
-            <div class="task"></div>
-            <span>Task</span>
-        </div>
-        <div>
-            <div class="critical-path"></div>
-            <span>Path Critico</span>
-        </div>
-        <div>
-            <div class="milestone"></div>
-            <span>Milestone</span>
-        </div>
-    </div>
+    <h1>Diagramma di Gantt Professionale - 95 Giorni</h1>
 
     <!-- Contenitore del diagramma -->
     <div class="gantt-chart-container">
@@ -186,59 +131,51 @@
     </a>
     <script>
         const tasks = [
-            { name: "Analisi e Ricerca di Mercato", duration: 8, startDay: 1, type: "task" },
-            { name: "Definizione Strategia di Marketing", duration: 10, startDay: 1, type: "critical-path" },
-            { name: "Creazione Sito Web", duration: 15, startDay: 11, type: "critical-path" },
-            { name: "Design e Grafica", duration: 8, startDay: 26, type: "task" },
-            { name: "Sviluppo Tecnico Sito", duration: 15, startDay: 42, type: "critical-path" },
-            { name: "Test e Ottimizzazione", duration: 8, startDay: 57, type: "task" },
-            { name: "Promozione Locale", duration: 12, startDay: 65, type: "task" },
-            { name: "Creazione Volantini", duration: 5, startDay: 77, type: "task" },
-            { name: "Configurazione Social Media", duration: 8, startDay: 82, type: "task" },
-            { name: "Campagna Pubblicitaria", duration: 10, startDay: 90, type: "critical-path" },
-            { name: "Prima Milestone: Lancio", duration: 1, startDay: 100, type: "milestone" },
-            { name: "Seconda Milestone: Primo Mese di Attività", duration: 1, startDay: 101, type: "milestone" }
+            { name: "Avvio Progetto", duration: 1, startDay: 1, type: "milestone" },
+            { name: "Analisi e Ricerca di Mercato", duration: 8, startDay: 2, type: "task" },
+            { name: "Analisi Completa", duration: 1, startDay: 10, type: "milestone" },
+            { name: "Definizione Strategia di Marketing", duration: 10, startDay: 11, type: "critical-path" },
+            { name: "Riepilogo Strategie", duration: 1, startDay: 21, type: "milestone" },
+            { name: "Creazione Sito Web", duration: 15, startDay: 22, type: "critical-path" },
+            { name: "Revisione Sviluppo Sito Web", duration: 1, startDay: 37, type: "milestone" },
+            { name: "Cercare hosting sito", duration: 1, startDay: 38, type: "critical-path" },
+            { name: "Integrazione Completata", duration: 1, startDay: 46, type: "milestone" },
+            { name: "Test e Ottimizzazione", duration: 9, startDay: 47, type: "task" },
+            { name: "Test Superati", duration: 1, startDay: 55, type: "milestone" },
+            { name: "Promozione Locale", duration: 12, startDay: 56, type: "task" },
+            { name: "Creazione Volantini", duration: 6, startDay: 68, type: "task" },
+            { name: "Idee e Materiale Promozionale", duration: 1, startDay: 73, type: "milestone" },
+            { name: "Configurazione Social Media", duration: 8, startDay: 74, type: "task" },
+            { name: "Campagna Pubblicitaria", duration: 12, startDay: 83, type: "critical-path" },
+            { name: "Revisione marketing", duration: 1, startDay: 82, type: "milestone" },
+            { name: "Lancio", duration: 1, startDay: 95, type: "milestone" }
         ];
 
-        const totalDays = 102; // Giorni totali
-
-        // Selezioniamo il contenitore per il diagramma
+        const totalDays = 95;
         const chartContainer = document.querySelector('.gantt-chart');
 
-        // Aggiungiamo l'intestazione del diagramma (giorni e nome attività)
         chartContainer.innerHTML = '<div class="header">Task</div>' +
             Array.from({ length: totalDays }, (_, i) => `<div class="header">${i + 1}</div>`).join('');
 
-        // Aggiungiamo le attività al diagramma
         tasks.forEach(task => {
-            // Creiamo la colonna con il nome dell'attività
             const nameDiv = `<div class="task-name">${task.name}</div>`;
 
-            // Creiamo le celle per la durata dell'attività
             const taskCells = Array.from({ length: totalDays }, (_, i) =>
                 i >= task.startDay - 1 && i < task.startDay - 1 + task.duration
-                    ? `<div class="${task.type}"></div>` // Mostriamo il task
-                    : task.type === "milestone" && i === task.startDay - 1
-                        ? `<div class="${task.type}"></div>` // Mostriamo la milestone
-                        : `<div></div>` // Cellula vuota
+                    ? `<div class="${task.type}" data-task="${task.name}" data-start="${task.startDay}" data-duration="${task.duration}"></div>`
+                    : `<div></div>`
             ).join('');
 
-            // Aggiungiamo il nome e le celle nel contenitore
             chartContainer.innerHTML += nameDiv + taskCells;
         });
 
-        // Funzione per "pinnare" la colonna dei task quando si scorre la pagina
-        window.addEventListener('scroll', function () {
-            const taskColumn = document.querySelectorAll('.task-name');
-            const scrollPosition = window.scrollY;
-
-            taskColumn.forEach(task => {
-                if (scrollPosition > 50) {
-                    task.classList.add('pinned');
-                } else {
-                    task.classList.remove('pinned');
-                }
-            });
+        // Event listener for clicks on task cells
+        chartContainer.addEventListener('click', (event) => {
+            const cell = event.target;
+            if (cell.dataset.task) {
+                const { task, start, duration } = cell.dataset;
+                alert(`Fase: ${task}\nNumero giorno: ${start} giorni\nDurata della fase: ${duration} giorni`);
+            }
         });
 
     </script>
