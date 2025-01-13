@@ -150,35 +150,38 @@
             { name: "Revisione marketing", duration: 1, startDay: 82, type: "milestone" },
             { name: "Lancio", duration: 1, startDay: 95, type: "milestone" }
         ];
-
+    
         const totalDays = 95;
         const chartContainer = document.querySelector('.gantt-chart');
-
+    
         chartContainer.innerHTML = '<div class="header">Task</div>' +
             Array.from({ length: totalDays }, (_, i) => `<div class="header">${i + 1}</div>`).join('');
-
+    
         tasks.forEach(task => {
             const nameDiv = `<div class="task-name">${task.name}</div>`;
-
+    
             const taskCells = Array.from({ length: totalDays }, (_, i) =>
                 i >= task.startDay - 1 && i < task.startDay - 1 + task.duration
-                    ? `<div class="${task.type}" data-task="${task.name}" data-start="${task.startDay}" data-duration="${task.duration}"></div>`
+                    ? `<div class="${task.type}" 
+                          data-task="${task.name}" 
+                          data-start="${task.startDay}" 
+                          data-duration="${task.duration}" 
+                          data-end="${task.startDay + task.duration - 1}"></div>`
                     : `<div></div>`
             ).join('');
-
+    
             chartContainer.innerHTML += nameDiv + taskCells;
         });
-
+    
         // Event listener for clicks on task cells
         chartContainer.addEventListener('click', (event) => {
             const cell = event.target;
             if (cell.dataset.task) {
-                const { task, start, duration } = cell.dataset;
-                alert(`Fase: ${task}\nInizio fase: ${start}° giorno\nDurata della fase: ${duration} giorni`);
+                const { task, start, duration, end } = cell.dataset;
+                alert(`Fase: ${task}\nInizio fase: ${start}° giorno\nDurata della fase: ${duration} giorni\nFine fase: ${end}° giorno`);
             }
         });
-
-    </script>
+    </script>    
 </body>
 
 </html>
