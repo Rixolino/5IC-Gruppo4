@@ -138,9 +138,9 @@
             { name: "Riepilogo Strategie", duration: 1, startDay: 21, type: "milestone" },
             { name: "Creazione Sito Web", duration: 15, startDay: 22, type: "critical-path" },
             { name: "Revisione Sviluppo Sito Web", duration: 1, startDay: 37, type: "milestone" },
-            { name: "Cercare hosting sito", duration: 1, startDay: 38, type: "critical-path" },
-            { name: "Integrazione Completata", duration: 1, startDay: 46, type: "milestone" },
-            { name: "Test e Ottimizzazione", duration: 9, startDay: 47, type: "task" },
+            { name: "Cercare hosting sito", duration: 4, startDay: 38, type: "critical-path" },
+            { name: "Integrazione Completata", duration: 1, startDay: 42, type: "milestone" },
+            { name: "Test e Ottimizzazione", duration: 13, startDay: 43, type: "task" },
             { name: "Test Superati", duration: 1, startDay: 55, type: "milestone" },
             { name: "Promozione Locale", duration: 12, startDay: 56, type: "task" },
             { name: "Creazione Volantini", duration: 6, startDay: 68, type: "task" },
@@ -174,7 +174,7 @@
             const cell = event.target;
             if (cell.dataset.task) {
                 const { task, start, duration } = cell.dataset;
-                alert(`Fase: ${task}\nNumero giorno: ${start} giorni\nDurata della fase: ${duration} giorni`);
+                alert(`Fase: ${task}\nInizio fase: ${start}° giorno\nDurata della fase: ${duration} giorni`);
             }
         });
 
