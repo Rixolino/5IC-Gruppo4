@@ -86,63 +86,131 @@
     };
   
     const data = {
-      nodes: [
-        { id: 1, label: 'HelpDigit', color: colors.main },
-        { id: 2, label: 'Pianificazione del progetto', color: colors.planning },
-        { id: 3, label: 'Creazione della piattaforma digitale', color: colors.platform },
-        { id: 4, label: 'Promozione e marketing', color: colors.marketing },
-        { id: 5, label: 'Gestione dei clienti', color: colors.customers },
-        { id: 6, label: 'Monitoraggio e valutazione', color: colors.monitoring, font: { color: 'black' } },
-        
-        { id: 7, label: 'Definire i servizi offerti', color: colors.planning },
-        { id: 8, label: 'Stabilire i prezzi', color: colors.planning },
-        { id: 9, label: 'Identificare target clienti', color: colors.planning },
-        { id: 10, label: 'Creare logo e nome', color: colors.planning },
-  
-        { id: 11, label: 'Realizzare il sito web', color: colors.platform },
-        { id: 12, label: 'Creare contenuti per promozione', color: colors.platform },
-  
-        { id: 13, label: 'Creare volantino promozionale', color: colors.marketing },
-        { id: 14, label: 'Promuovere su piattaforme social', color: colors.marketing },
-  
-        { id: 15, label: 'Configurare sistema ordini', color: colors.customers },
-        { id: 16, label: 'Rispondere a richieste', color: colors.customers },
-        { id: 17, label: 'Realizzare servizi richiesti', color: colors.customers },
-        { id: 18, label: 'Gestire pagamenti', color: colors.customers },
-  
-        { id: 19, label: 'Registrare guadagni', color: colors.monitoring, font: { color: 'black' } },
-        { id: 20, label: 'Raccogliere feedback', color: colors.monitoring, font: { color: 'black' } },
-        { id: 21, label: 'Aggiornare sito/social', color: colors.monitoring, font: { color: 'black' } }
+  nodes: [
+    { id: 1, label: 'HelpDigit', color: colors.main },
+    { id: 2, label: 'Pianificazione del progetto', color: colors.planning },
+    { id: 3, label: 'Creazione della piattaforma digitale', color: colors.platform },
+    { id: 4, label: 'Promozione e marketing', color: colors.marketing },
+    { id: 5, label: 'Gestione dei clienti', color: colors.customers },
+    { id: 6, label: 'Monitoraggio e valutazione', color: colors.monitoring, font: { color: 'black' } },
 
-      ],
-      edges: [
-        { from: 1, to: 2 },
-        { from: 1, to: 3 },
-        { from: 1, to: 4 },
-        { from: 1, to: 5 },
-        { from: 1, to: 6 },
-  
-        { from: 2, to: 7 },
-        { from: 2, to: 8 },
-        { from: 2, to: 9 },
-        { from: 2, to: 10 },
-  
-        { from: 3, to: 11 },
-        { from: 3, to: 12 },
-  
-        { from: 4, to: 13 },
-        { from: 4, to: 14 },
-  
-        { from: 5, to: 15 },
-        { from: 5, to: 16 },
-        { from: 5, to: 17 },
-        { from: 5, to: 18 },
-  
-        { from: 6, to: 19 },
-        { from: 6, to: 20 },
-        { from: 6, to: 21 }
-      ]
-    };
+    // Pianificazione del progetto
+    { id: 7, label: 'Definire i servizi offerti', color: colors.planning },
+    { id: 8, label: 'Stabilire i prezzi per ciascun servizio', color: colors.planning },
+    { id: 9, label: 'Identificare target clienti', color: colors.planning },
+    { id: 10, label: 'Creare logo e nome', color: colors.planning },
+
+    // Creazione della piattaforma digitale
+    { id: 11, label: 'Frontend del sito web', color: colors.platform },
+    { id: 12, label: 'Backend del sito web', color: colors.platform },
+    { id: 13, label: 'Creare contenuti per la promozione', color: colors.platform },
+
+    // Frontend del sito web
+    { id: 14, label: 'Scegliere la piattaforma (WordPress, Wix, Instagram, ecc.)', color: colors.platform },
+    { id: 15, label: 'Inserire la descrizione dei servizi e i prezzi', color: colors.platform },
+    { id: 16, label: 'Aggiungere un modulo di contatto o pulsante WhatsApp', color: colors.platform },
+
+    // Backend del sito web
+    { id: 17, label: 'Configurare server e database', color: colors.platform },
+    { id: 18, label: 'Gestire il sistema di autenticazione', color: colors.platform },
+    { id: 19, label: 'Gestire la logica di elaborazione dati (es. ordini, pagamenti)', color: colors.platform },
+
+    // Creare contenuti per la promozione
+    { id: 20, label: 'Foto e grafiche per il sito/social', color: colors.platform },
+    { id: 21, label: 'Descrizioni brevi e accattivanti dei servizi', color: colors.platform },
+
+    // Promozione e marketing
+    { id: 22, label: 'Creare un volantino promozionale', color: colors.marketing },
+    { id: 23, label: 'Promuovere su piattaforme social', color: colors.marketing },
+
+    // Creazione del volantino
+    { id: 24, label: 'Inserire QR code del sito/pagina social', color: colors.marketing },
+    { id: 25, label: 'Distribuire nei negozi locali o in bacheche scolastiche', color: colors.marketing },
+
+    // Promozione sui social
+    { id: 26, label: 'Creare post settimanali sui social', color: colors.marketing },
+    { id: 27, label: 'Raggiungere i clienti con messaggi diretti', color: colors.marketing },
+
+    // Gestione dei clienti
+    { id: 28, label: 'Configurare sistema ordini', color: colors.customers },
+    { id: 29, label: 'Rispondere rapidamente alle richieste', color: colors.customers },
+    { id: 30, label: 'Realizzare e consegnare i servizi richiesti', color: colors.customers },
+    { id: 31, label: 'Gestire i pagamenti', color: colors.customers },
+
+    // Sistema ordini
+    { id: 32, label: 'Creare un foglio di calcolo per monitorare i clienti e i servizi richiesti', color: colors.customers },
+
+    // Realizzare e consegnare i servizi richiesti
+    { id: 33, label: 'Creare volantini, account, o digitalizzare documenti', color: colors.customers },
+
+    // Monitoraggio e valutazione
+    { id: 34, label: 'Registrare i guadagni mensili', color: colors.monitoring, font: { color: 'black' } },
+    { id: 35, label: 'Raccogliere feedback dai clienti', color: colors.monitoring, font: { color: 'black' } },
+    { id: 36, label: 'Aggiornare sito/social con nuovi servizi o offerte', color: colors.monitoring, font: { color: 'black' } }
+  ],
+  edges: [
+    { from: 1, to: 2 },
+    { from: 1, to: 3 },
+    { from: 1, to: 4 },
+    { from: 1, to: 5 },
+    { from: 1, to: 6 },
+
+    // Pianificazione del progetto
+    { from: 2, to: 7 },
+    { from: 2, to: 8 },
+    { from: 2, to: 9 },
+    { from: 2, to: 10 },
+
+    // Creazione della piattaforma digitale
+    { from: 3, to: 11 },
+    { from: 3, to: 12 },
+    { from: 3, to: 13 },
+
+    // Frontend del sito web
+    { from: 11, to: 14 },
+    { from: 11, to: 15 },
+    { from: 11, to: 16 },
+
+    // Backend del sito web
+    { from: 12, to: 17 },
+    { from: 12, to: 18 },
+    { from: 12, to: 19 },
+
+    // Creare contenuti per la promozione
+    { from: 13, to: 20 },
+    { from: 13, to: 21 },
+
+    // Promozione e marketing
+    { from: 4, to: 22 },
+    { from: 4, to: 23 },
+
+    // Creazione del volantino
+    { from: 22, to: 24 },
+    { from: 22, to: 25 },
+
+    // Promozione sui social
+    { from: 23, to: 26 },
+    { from: 23, to: 27 },
+
+    // Gestione dei clienti
+    { from: 5, to: 28 },
+    { from: 5, to: 29 },
+    { from: 5, to: 30 },
+    { from: 5, to: 31 },
+
+    // Sistema ordini
+    { from: 28, to: 32 },
+
+    // Realizzare e consegnare i servizi richiesti
+    { from: 30, to: 33 },
+
+    // Monitoraggio e valutazione
+    { from: 6, to: 34 },
+    { from: 6, to: 35 },
+    { from: 6, to: 36 }
+  ]
+};
+
   
     const options = {
       nodes: {
