@@ -114,12 +114,54 @@
         .button i {
             margin-right: 10px;
         }
+
+        /* Legenda */
+        .legend {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .legend div {
+            margin: 0 20px;
+            text-align: center;
+        }
+
+        .legend div span {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #495057;
+        }
+
+        /* Piccole migliorie estetiche */
+        .legend div div {
+            width: 30px;
+            height: 20px;
+            margin: 0 auto;
+            border-radius: 4px;
+        }
     </style>
 </head>
 
 <body>
 
     <h1>Diagramma di Gantt Professionale - 95 Giorni</h1>
+
+    <div class="legend">
+        <div>
+            <div class="task"></div>
+            <span>Task</span>
+        </div>
+        <div>
+            <div class="critical-path"></div>
+            <span>Path Critico</span>
+        </div>
+        <div>
+            <div class="milestone"></div>
+            <span>Milestone</span>
+        </div>
+    </div>
 
     <!-- Contenitore del diagramma -->
     <div class="gantt-chart-container">
