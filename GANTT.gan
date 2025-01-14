@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="HelpDigit" company="5IC - LOIACONO, MAZZONE, PARADISO, RISOLA" webLink="http://" view-date="2025-01-31" view-index="0" gantt-divider-location="352" resource-divider-location="300" version="3.3.3312" locale="it_IT">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Nome" width="192" order="0"/>
+        <field id="tpd4" name="Data d'inizio" width="72" order="1"/>
+        <field id="tpd5" name="Data di fine" width="72" order="2"/>
+        <field id="tpd15" name="Note" width="20" order="3"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <option id="color.recent"><![CDATA[#dab6fc #9933ff #ff6699 #33cc33 #ff9933]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nome" width="210" order="0"/>
+        <field id="1" name="Ruolo predefinito" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" uid="12c801b75dea48cf9a4d6f9c780d4f3e" name="1. Pianificazione del progetto" color="#ff9933" meeting="false" start="2025-02-03" duration="12" complete="0" thirdDate="2025-02-03" thirdDate-constraint="1" expand="true">
+            <task id="2" uid="39aabd5c531d4bbeae4fbaadb032ad87" name="Definire i servizi offerti" meeting="false" start="2025-02-03" duration="2" complete="0" thirdDate="2025-02-03" thirdDate-constraint="1" expand="true">
+                <depend id="3" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="3" uid="662ef953ca004b7a9df78aa4f000aa76" name="Stabilire i prezzi per ciascun servizio" meeting="false" start="2025-02-05" duration="2" complete="0" expand="true">
+                <depend id="4" type="2" difference="0" hardness="Strong"/>
+                <depend id="5" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="4" uid="ab1c065dc2314e0fba28eff1e730438a" name="Identificare target clienti" meeting="false" start="2025-02-07" duration="1" complete="0" expand="true"/>
+            <task id="5" uid="004604332bb9475c8fc86e6115fff570" name="Creare logo e nome" color="#8cb6ce" meeting="false" start="2025-02-07" duration="4" complete="0" expand="true">
+                <depend id="14" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="14" uid="69d875cbd70a49c5a7b3d26a35b2a981" name="Creare contenuti per la promozione" color="#8cb6ce" meeting="false" start="2025-02-13" duration="4" complete="0" expand="true">
+                <depend id="10" type="2" difference="0" hardness="Strong"/>
+                <depend id="11" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="10" uid="21e9002568b84a2a8b0cdddf35c0ffad" name="2. Frontend del sito web" color="#33cc33" meeting="false" start="2025-02-19" duration="10" complete="0" expand="true">
+            <task id="11" uid="00eba02bf2f04979b685277c9b2146ec" name="Scegliere la piattaforma" color="#8cb6ce" meeting="false" start="2025-02-19" duration="4" complete="0" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="12" uid="bdc89da4b4cb44f581009f31e6d7d94f" name="Progettare l'interfaccia grafica" color="#8cb6ce" meeting="false" start="2025-02-25" duration="2" complete="0" expand="true">
+                <depend id="13" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="13" uid="8c3768aa39cf42c3934afa28c514578e" name="Implementare la navigazione" color="#8cb6ce" meeting="false" start="2025-02-27" duration="4" complete="0" expand="true">
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+                <depend id="16" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="15" uid="33b11ec2327c4eb3ae079f2896a8aefc" name="3. Backend del sito web" color="#33cc33" meeting="false" start="2025-03-05" duration="10" complete="0" expand="true">
+            <task id="16" uid="e77a2235b2a544d580d8015b51dce771" name="Configurare server e database" meeting="false" start="2025-03-05" duration="4" complete="0" expand="true">
+                <depend id="18" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="18" uid="378dbfc6535b4b32a35a5566d665241a" name="Gestire il sistema di autenticazione" color="#8cb6ce" meeting="false" start="2025-03-11" duration="3" complete="0" expand="true">
+                <depend id="17" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="17" uid="80224c7da5034a289b78fb5217efa30f" name="Gestire la logica di elaborazione dei dati" color="#8cb6ce" meeting="false" start="2025-03-14" duration="3" complete="0" expand="true">
+                <depend id="19" type="2" difference="0" hardness="Strong"/>
+                <depend id="20" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="19" uid="463881dd63a7495286b79a2b55b3b2a6" name="4. Creare contenuti per la promozione" color="#ff6699" meeting="false" start="2025-03-19" duration="5" complete="0" expand="true">
+            <task id="20" uid="8fc074cc6ea4442d856e4a69b5619898" name="Creare grafiche per volantino e social" meeting="false" start="2025-03-19" duration="3" complete="0" expand="true">
+                <depend id="21" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="21" uid="b8df236151a14121a9e869e147571d3d" name="Scrivere descrizioni e slogan" color="#8cb6ce" meeting="false" start="2025-03-24" duration="2" complete="0" expand="true">
+                <depend id="22" type="2" difference="0" hardness="Strong"/>
+                <depend id="23" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="22" uid="f74e02d857584071b5b0a9c980053396" name="5. Promozione e marketing" color="#ff6699" meeting="false" start="2025-03-26" duration="46" complete="0" expand="true">
+            <task id="23" uid="80512d8be6e546e193a721c9b0b43822" name="Creare un volantino promozionale" meeting="false" start="2025-03-26" duration="6" complete="0" expand="true">
+                <depend id="24" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="24" uid="55834d79c15a44068cbcf69415a1a6c4" name="Promuovere su piattaforme social" meeting="false" start="2025-04-03" duration="4" complete="0" expand="true"/>
+            <task id="26" uid="b3ad28b989094853a54f0e8b5a35bbbf" name="Inserire QR code del sito/pagina social" meeting="false" start="2025-05-22" duration="1" complete="0" expand="true">
+                <depend id="27" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="27" uid="7c2a693070cf4a10a15fa2a75c14c16e" name="Distribuire nei negozi o in bacheche" color="#8cb6ce" meeting="false" start="2025-05-23" duration="4" complete="0" expand="true">
+                <depend id="25" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="25" uid="79ea2f230c304db1845a3a4afe5c331c" name="6. Promozione sui social" color="#ff6699" meeting="false" start="2025-05-29" duration="10" complete="0" expand="true">
+            <task id="28" uid="ab171a325e0b4085ba5b8f2d27ac1bde" name="Creare post settimanali sui social" meeting="false" start="2025-05-29" duration="6" complete="0" expand="true">
+                <depend id="29" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="29" uid="9cfaf508329a49b79c93919582c4ec3f" name="Raggiungere i clienti con messaggi diretti" color="#8cb6ce" meeting="false" start="2025-06-06" duration="4" complete="0" expand="true">
+                <depend id="30" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="30" uid="befe4374942d4a668353880228e75690" name="7. Gestione dei clienti" color="#9933ff" meeting="false" start="2025-06-12" duration="15" complete="0" expand="true">
+            <task id="31" uid="de7017c6c17a496eb6d481987b00f715" name="Configurare sistema ordini" color="#8cb6ce" meeting="false" start="2025-06-12" duration="6" complete="0" expand="true">
+                <depend id="32" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="32" uid="3ac46116d55b4998ac83d0abbe65fbc5" name="Rispondere rapidamente alle richieste" color="#8cb6ce" meeting="false" start="2025-06-20" duration="4" complete="0" expand="true">
+                <depend id="33" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="33" uid="cd212903f793499eb951706d11cbf799" name="Realizzare e consegnare i servizi richiesti" color="#8cb6ce" meeting="false" start="2025-06-26" duration="3" complete="0" expand="true">
+                <depend id="34" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="34" uid="1e154ee33ff14734b997cf3cf363b467" name="Gestire i pagamenti" color="#8cb6ce" meeting="false" start="2025-07-01" duration="2" complete="0" expand="true">
+                <depend id="35" type="2" difference="0" hardness="Strong"/>
+                <depend id="36" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="35" uid="5486f678867f498c931f71960f46e3d7" name="8. Sistema ordini" color="#9933ff" meeting="false" start="2025-07-03" duration="5" complete="0" expand="true">
+            <task id="36" uid="77a26816b9384694824855932c804259" name="Creare un sistema di monitoraggio ordini" color="#8cb6ce" meeting="false" start="2025-07-03" duration="3" complete="0" expand="true">
+                <depend id="37" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="37" uid="f82f7884c57646d6a324e724336bf26b" name="Configurare le notifiche via email/social" color="#8cb6ce" meeting="false" start="2025-07-08" duration="2" complete="0" expand="true">
+                <depend id="38" type="2" difference="0" hardness="Strong"/>
+                <depend id="39" type="2" difference="0" hardness="Strong"/>
+                <depend id="41" type="2" difference="0" hardness="Strong"/>
+                <depend id="42" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="39" uid="38a0dafb78f744238888f691a381eb12" name="9. Realizzare e consegnare i servizi richiesti" color="#9933ff" meeting="false" start="2025-07-10" duration="3" complete="0" expand="true">
+            <task id="38" uid="9b372c9f17e943a89846ab81f33a55d1" name="Creare volantini, account, o documenti" color="#8cb6ce" meeting="false" start="2025-07-10" duration="3" complete="0" expand="true"/>
+            <task id="41" uid="9b0a6e27b313440ab712c94c15e671bb" name="Concludere gli ordini e garantire qualità" color="#8cb6ce" meeting="false" start="2025-07-10" duration="2" complete="0" expand="true">
+                <depend id="40" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="40" uid="e8ea7e2e403e47d1ada892630b1bad64" name="10. Monitoraggio e valutazione" color="#dab6fc" meeting="false" start="2025-07-14" duration="9" complete="0" expand="true">
+            <task id="42" uid="f0a826586ca247f6a843f69adf8c20ef" name="Registrare i guadagni mensili" color="#8cb6ce" meeting="false" start="2025-07-14" duration="3" complete="0" expand="true">
+                <depend id="46" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="46" uid="2a39a86d81994370abc1e6160fd0d775" name="Raccogliere feedback dai clienti" color="#8cb6ce" meeting="false" start="2025-07-17" duration="3" complete="0" expand="true">
+                <depend id="45" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="45" uid="93ba442ebdd04001b3d24b58e241aaf3" name="Aggiornare sito/social con nuovi servizi" color="#8cb6ce" meeting="false" start="2025-07-22" duration="3" complete="0" expand="true"/>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
